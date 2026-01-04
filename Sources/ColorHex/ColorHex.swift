@@ -6,7 +6,7 @@
 import SwiftUI
 
 // Converts from a hexadecimal string to a Swift Color
-extension Color {
+public extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
@@ -37,7 +37,7 @@ extension Color {
 
 // Converts from or to a UIColor or NSColor to a hexidecimal string
 #if !os(macOS)
-extension UIColor {
+public extension UIColor {
     convenience init?(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
@@ -66,7 +66,7 @@ extension UIColor {
     }
 }
 #else
-extension NSColor {
+public extension NSColor {
     convenience init?(hexString: String) {
         var hexSanitized = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
@@ -99,7 +99,7 @@ extension NSColor {
 
 // Convert to hex color
 #if !os(macOS)
-extension UIColor {
+public extension UIColor {
     func toHex() -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
@@ -111,7 +111,7 @@ extension UIColor {
     }
 }
 #else
-extension NSColor {
+public extension NSColor {
     func toHex() -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
