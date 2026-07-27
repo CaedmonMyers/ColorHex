@@ -8,7 +8,7 @@ To install with [Swift Package Manager](https://swift.org/package-manager/), ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/CaedmonMyers/ColorHex.git", from: "1.0.1")
+    .package(url: "https://github.com/ThaliaMyers/ColorHex.git", from: "1.0.1")
 ]
 ```
 
